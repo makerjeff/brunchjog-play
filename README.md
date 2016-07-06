@@ -1,8 +1,9 @@
 #BrunchJog Play
 
 ##Stack
-- Node
-- Express
+- Node.js
+- Express.js 
+- [Passport.js (Authentication)](http://passportjs.org/docs/authenticate)
 - [Bootstrap](http://getbootstrap.com/)
 
 ##References
