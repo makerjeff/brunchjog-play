@@ -7,6 +7,12 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+    if (error && error.length > 0)
+      br
+      h4.error-msg= error
+      br
+
+      //TODO: this not working
 
   script(src='http://code.jquery.com/jquery.js')
   script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')

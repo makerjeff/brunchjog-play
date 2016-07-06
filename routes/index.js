@@ -13,18 +13,25 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', message: new Date().toLocaleString()});
 });
 
-// added from mHerman tutorial
+// added from mHerman tutorial, including error handling
+// GET register
 router.get('/register', function(req, res){
   res.render('register', { });
 });
 
+// POST register
 router.post('/register', function(req, res) {
   Account.register(new Account({username: req.body.username}),req.body.password, function(err, account){
     if(err){
       return res.render('register', {account:account});
     } else {
       passport.authenticate('local')(req, res, function(){
-        res.redirect('/');
+
+        if(err){
+          return next(err);
+        } else {
+          res.redirect('/');
+        }
       });
     }
   });
