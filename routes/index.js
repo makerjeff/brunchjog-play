@@ -39,7 +39,9 @@ router.post('/register', function(req, res) {
 
 // GET login
 router.get('/login', function(req, res){
-  res.render('login', {user: req.user});
+  //res.render('login', {user: req.user});
+  res.type('plain/html')
+  res.sendFile(__dirname + '../../public/login.html');
 });
 
 // POST login
